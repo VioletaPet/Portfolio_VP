@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    # no code needed for now
+    @projects = Project.all
   end
 end

@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <div class="resume">
+    <button type="button" class="btn btn-outline-primary">Download CV <i class="fa-solid fa-file-arrow-down"></i></button>
+  </div>
+
+  <div class="col-4" id="sticky-side">
+    <img src="assets/photo.png" alt="Picture of Violeta" id="photo">
+    <h1>Violeta Petkovic</h1>
+    <h2>Junior Full Stack Developer</h2>
+    <p>Aspiring Developer filled with curiosity and passion</p>
+
+    <div class="navbar">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact me!</a></li>
+      </ul>
+    </div>
+    <p>
+      b <br>
+      b <br>
+      b <br>
+      b <br>
+      b <br>
+      b <br>
+    </p>
+  </div>
+
+  <div class="col-8" id="main-content">
+    <section id="about" class="pt-2">
+      <div>
+        <p class=mb-0">Hello, nice to meet you!</p>
+        <div class="mb-4">
+          <p>I’m an aspiring Junior Full Stack Developer passionate about building the bridge between well performing backend code and intuitive frontend design to make seamless, user-focused applications come to life. Recently, I completed an intensive coding bootcamp, where I learned my skills in technologies like Ruby, JavaScript, and modern frameworks to build applications that are both visually engaging and highly functional.</p>
+        </div>
+        <div class="mb-4">
+          <p>Before transitioning into tech, I gained valuable experience in project management and office leadership roles. These positions equipped me with strong organizational, problem-solving, and interpersonal skills – qualities that complement my technical knowledge and support my career switch.
+          I’m excited to continue growing in full-stack development, embracing new challenges, and contributing to innovative solutions in this dynamic field.
+          </p>
+        </div>
+        <div class="mb-4">
+          <p class="mb-0"><em>My ultimate goal? </em></p>
+          <p>To keep growing professionally, solve meaningful problems, and one day become a true coding-goddess.</p>
+        </div>
+        <div class="mb-4">
+          <p>Now that I’ve made my future plans sound inspiring, let me gracefully transition back into the pigeon. Because in my spare time, you’ll find me wobbling through new yoga poses (occasionally falling over), crocheting gifts for loved ones or on my next travel adventure to explore nature and find delicious local snacks along the way.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h3>Stack</h3>
+      <div class="stack-container-one">
+        <p><strong>Frontend</strong></p>
+          <p>HTML, CSS, JavaScript, Bootstrap, AJAX, Tailwind CSS, Stimulus</p>
+        <p><strong>Backend</strong></p>
+          <p>Ruby, Rails, SQL, PostgreSQL</p>
+      </div>
+      <div class="stack-container-two">
+        <div class="stack">
+          <p><strong>Version Control</strong></p>
+            <p>Git, GitHub</p>
+        </div>
+        <div class="stack">
+          <p><strong>Deployment</strong></p>
+            <p>Heroku</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3>Projects</h3>
+      <%= @projects.each do |project| %>
+        <div class="card-project">
+          <%= image_tag project.thumbnail, alt: "#{project.title} Thumbnail" %>
+          <div class="card-project-infos">
+            <h2><%= project.title %></h2>
+            <p><%= project.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </section>
+
+    <section id="certifications">
+      <h3>Certifications</h3>
+      <ul>
+        <li><strong>Le Wagon</strong></li>
+        <li><strong>Projectm</strong></li>
+        <li><strong>Commu</strong></li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h3><em>Contact me!</em></h3>
+      <p>test</p>
+    </section>
+  </div>
+</div>
