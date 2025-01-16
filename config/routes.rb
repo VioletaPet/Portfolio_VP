@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root "pages#home"
 
   resources :projects, only: [:show]
+  resources :skills, only: [:show]
 end
