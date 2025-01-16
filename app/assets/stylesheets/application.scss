@@ -1,3 +1,9 @@
 @import "bootstrap";
-@import 'pages/homepage';
 @import "font-awesome";
+
+// pages
+@import 'pages/homepage';
+
+// components
+@import 'components/card_project';
+@import 'components/card_skill'

@@ -52,22 +52,16 @@
 
     <section id="stack">
       <h3>Stack</h3>
-      <div class="stack-container-one">
-        <p><strong>Frontend</strong></p>
-          <p>HTML, CSS, JavaScript, Bootstrap, AJAX, Tailwind CSS, Stimulus</p>
-        <p><strong>Backend</strong></p>
-          <p>Ruby, Rails, SQL, PostgreSQL</p>
-      </div>
-      <div class="stack-container-two">
-        <div class="stack">
-          <p><strong>Version Control</strong></p>
-            <p>Git, GitHub</p>
+      <% @skills.in_groups_of(6).each do |group| %>
+        <div class="row">
+          <% group.each do |skill| %>
+            <div class="card-skill">
+              <%= image_tag skill.image, alt: "#{skill.name} Logo" %>
+              <%= skill.name %>
+            </div>
+          <% end %>
         </div>
-        <div class="stack">
-          <p><strong>Deployment</strong></p>
-            <p>Heroku</p>
-        </div>
-      </div>
+      <% end %>
     </section>
 
     <section id="projects">
