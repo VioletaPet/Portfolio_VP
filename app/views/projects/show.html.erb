@@ -1,1 +1,23 @@
-<%# coming soon %>
+<div class="container-fluid">
+  <div class="col-2" id="sticky-nav">
+    <a href="<%= root_path %>"><i class="fa-solid fa-arrow-left" id="back-button"></i></a>
+
+    <nav class="project-navbar">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#collaboration">Team Collaboration</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#deep-dive"></a>Project Deep Dive</li>
+        <li><a href="#wrap-up">Wrap up</a></li>
+        <li><a href="#contributions">Contributions</a></li>
+      </ul>
+    </nav>
+  </div>
+
+    <% if @project.title == "StreamCaddy" %>
+      <%= render "projects/streamcaddy" %>
+    <% elsif @project.title == "RentaPet" %>
+      <%= render "project/rentapet" %>
+    <% end %>
+</div>

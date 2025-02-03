@@ -2,35 +2,31 @@
   display: flex;
   margin: 0;
   padding: 0;
-  position: relative;
 
-  .resume {
-    position: absolute;
-    right: 210px;
-    top: 50px;
-    }
-
-  .fa-solid {
-    font-size: 20px;
+  p {
+    font-size: 24px;
   }
 }
 
-
 #sticky-side {
-  background-color: #354d6a;
-  color: #eddde0;
+  background: linear-gradient(to top, #101D3B, #112044);
+  color: white;
   padding-top: 110px;
   padding-left: 200px;
   height: 100vh;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   .navbar {
     ul {
       list-style: none;
 
       a {
         text-decoration: none;
-        color: #eddde0;
+        color: white;
       }
     }
   }
@@ -42,41 +38,95 @@
     margin-left: 85px;
     margin-bottom: 10px;
   }
+
+  .links {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    i {
+      font-size: 30px;
+    }
+  }
 }
 
 #main-content {
-  background-color: #eddde0;
-  padding: 110px;
-  padding-right: 200px;
+  background: linear-gradient(to top, #0F172A, #112044);
+  color: white;
+  padding: 110px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  #stack {
-    margin-top: 30px;
-    .stack-container-one {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+
+    &:first-child {
+      padding-top: 0;
     }
-    .stack-container-two {
-      display: flex;
-      justify-content: space-between;
-      margin-left: 30px;
-      margin-right: 30px;
+
+    &:last-child {
+      padding-bottom: 0;
     }
   }
 
-  #certifications {
-    margin-top: 30px;
-    ul {
-      display: flex;
-      list-style: none;
+  #stack {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      li {
-        margin-right: 30px;
-      }
-    }
+  #projects {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  #certifications {
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 150px;
   }
 
   #contact {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      border: 1px solid grey;
+      border-radius: 30px;
+      width: 550px;
+      height: 90px;
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+      }
+    }
   }
 }

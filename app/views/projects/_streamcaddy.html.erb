@@ -1,0 +1,164 @@
+<div class="container-fluid">
+  <div class="col-10" id="project-content">
+    <section id="overview" class="project-section">
+      <div class="overview-container">
+        <div class="project-details">
+          <h1><%= @project.title %></h1>
+          <p class="project-info">Le Wagon, December 2024</p>
+          <p class="project-description">
+            StreamCaddy was my teams final project of the Le Wagon Bootcamp for which we got to use all the skills we have learned in the previous three months!
+          </p>
+          <div class="project-links">
+            <a href="https://www.youtube.com/watch?v=Fpj2z70Srl8" target="_blank" class="video-link">
+              <i class="fa-brands fa-youtube"></i>
+              <span>Watch Demo</span>
+            </a>
+            <a href="https://github.com/VioletaPet/StreamCaddy" target="_blank" class="github-link">
+              <i class="fa-brands fa-github"></i>
+              <span>View Code</span>
+            </a>
+          </div>
+        </div>
+        <%= image_tag @project.thumbnail, alt: "#{@project.title} Thumbnail", class: "project-thumbnail" %>
+      </div>
+      <p>StreamCaddy is an innovative mobile application designed to simplify subscription management for avid streamers, addressing the common challenges of juggling multiple streaming platforms. By providing users with tools to track and optimize their subscriptions, the app helps them avoid unnecessary expenses while enhancing their viewing experience.</p>
+      <p>Key features include:</p>
+      <ul>
+        <li>A fun Tinder-style game to capture user preferences, adding selected movies and TV shows to their watchlist</li>
+        <li>Powered by the TMDB API to provide rich and up-to-date data on movies and TV shows</li>
+        <li>Browsing capabilities for movies and TV shows, with detailed information such as synopses, seasons, cast, and reviews</li>
+        <li>Personalized subscription management, allowing users to specify their current streaming platforms and decide how many they want to cancel or keep</li>
+        <li>A dynamic watchlist schedule, that recommends which platforms to subscribe to and when, based on the user’s saved watchlist, ensuring cost savings and efficient viewing</li>
+      </ul>
+    </section>
+
+    <section id="implementation" class="project-section">
+      <h2>Implementation</h2>
+      <div class="content-block">
+        <p>StreamCaddy was built through effective teamwork and robust project management practices. We used Zoom for real-time communication and pair programming, Slack for sharing codes and notes and Trello to track tasks and progress. The TMDB API was central to providing up-to-date information on movies and TV shows, ensuring a rich browsing and watchlist experience. By combining these tools with our development skills, we created a cohesive and user-centric application that addresses a real-world need for streamers.</p>
+      </div>
+    </section>
+
+    <section id="collaboration" class="project-section">
+      <h2>Team Collaboration</h2>
+      <div class="content-block">
+        <p>Our team worked collaboratively to build the foundational structure of StreamCaddy. Together, we constructed the routes, models, and controllers, ensuring a robust and well-integrated backend. Additionally, we explored the TMDB API as a team to pinpoint the specific endpoints needed for our application. This joint effort allowed everyone to gain a solid understanding of the complex core of the application, fostering better collaboration and enabling us to tackle subsequent development tasks with confidence and clarity.</p>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="project-section">
+      <h2>Troubleshooting</h2>
+      <div class="content-block">
+        <p>Developing StreamCaddy presented several significant challenges that required creative problem-solving and close team collaboration. Working with the TMDB API was particularly demanding due to its vast amount of data. Identifying and using the correct endpoints to fetch the necessary information was quite complex. Our database, consisting of 16 interconnected models, required careful planning to ensure seamless integration and efficient data retrieval. Navigating the relationships between models and figuring out how to access specific information in the code added an extra layer of complexity. Another challenge was learning to use Cloudinary for the first time. We had to familiarize ourselves with its integration alongside Active Storage to successfully upload and host images, which was a steep but rewarding learning curve. Generating the personalized subscription schedule also proved to be a technically intricate task. Designing logic to align user watchlist priorities with the availability of content across platforms required precision and innovative thinking. Despite these obstacles, team coordination and timely debugging played a crucial role in overcoming these hurdles and ensuring a smooth and user-friendly experience.</p>
+      </div>
+    </section>
+
+    <section id="deep-dive" class="project-section">
+      <h2>Project Deep Dive</h2>
+
+      <div class="feature-cards">
+        <article class="feature-card" id="tinder-game">
+          <h3>Tinder-style Game</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/tindergame.jpeg", alt: "Tinder Game Feature", class: "feature-image" %>
+            <div class="feature-description">
+              <p>The <em>Tinder-style game</em> is a dynamic and interactive feature that allows users to <strong>swipe</strong> through a selection of **movies** and **TV shows**, choosing their **preferences**. Designed to be both **engaging** and **fun**, the game not only makes the experience enjoyable but also introduces users to **new media** they might not have discovered otherwise. The **preferences** selected during the game are saved to the user's **personalized watchlist**, forming the foundation for their **customized viewing recommendations**. This feature was developed by one of my **teammates**, who brought **creativity** and **technical expertise** to craft a **seamless** and **enjoyable discovery tool** for users.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="browsing-page">
+          <h3>Browsing Page</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/browsing_page.jpeg", alt: "Browsing Page", class: "feature-image" %>
+            <div class="feature-description">
+              <p>The general **browsing page** is the central hub where users can browse a vast selection of **movies** and **TV shows**. This page showcases the media with their **posters** and **titles**, all dynamically fetched from the **TMDB API**. Through the “+” button, the user can **add media** to his or her **watchlist**. The **subscribed streaming providers** are displayed next to the **filter options**, providing a quick overview of their **active services**. From this page, users can easily **scroll through** and **explore** available media, setting the foundation for discovering content tailored to their **preferences**.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="filtered-browsing-page">
+          <h3>Filtered Browsing Page</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/filtered_browse.jpeg", alt: "Filtered Browsing Page", class: "feature-image" %>
+            <div class="feature-description">
+              <p>The **filtered browsing page** demonstrates how users can refine their search by selecting specific **categories**, for example, "TV Shows" and the "**Family**" genre. These **filters** allow users to streamline their browsing experience and focus on content that matches their **interests**. This page highlights the **personalized nature** of the application, ensuring users can efficiently find and access the **media** they love. These pages were developed by my **teammates**, showcasing their expertise in designing and implementing intuitive and **user-friendly browsing** and **filtering functionalities**.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="media-show-page">
+          <h3>Media Show Page</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/showpage1.jpeg", alt: "Media Show Page", class: "feature-image" %>
+            <p>This page provides a comprehensive and visually **engaging overview** of a **selected movie or TV show**. At the top, the media's **poster** is prominently displayed, with a **tab navigation** bar allowing users to access different sections such as **synopsis**, **cast**, **reviews**, and - for TV shows - **seasons**. Essential information, including the **synopsis**, **genres**, **director**, and **publishing date** on the first page give users a **clear understanding** of the media at a glance. A unique feature is the display of the **streaming provider’s logo** in the top-right corner of the poster, indicating where the media can be watched. Below, a **backdrop** showcases a gallery of images from the media, offering an additional layer of immersion.</p>
+            <%= image_tag "streamcaddy/showpage2.jpeg", alt: "Media Show Page", class: "feature-image" %>
+          </div>
+        </article>
+
+        <article class="feature-card" id="media-show-page">
+          <div class="feature-content">
+            <p>I had the privilege of being responsible for the **complete development** of the **media show page**, both on the **backend** and **frontend**. On the **backend**, I wrote the **logic to fetch all the displayed data** including **episodes**, **seasons**, **cast**, **synopsis**, and more from the **TMDB API**, ensuring **accurate** and **efficient integration** of the vast dataset. I also implemented the **CRUD** operation required for this page, enabling **seamless data handling**. On the **frontend**, I focused on creating an **intuitive** and **visually appealing layout**. I designed the **tab navigation** to provide users with **easy access** to different **sections** ensuring a **clear** and **user-friendly interface**.
+            The **backdrop gallery** was another feature I crafted, enhancing the page’s aesthetic **appeal** and **immersiveness** by showcasing media-related images. The **display of genres** was carefully styled to maintain **consistency** and **clarity**, contributing to an **engaging user experience**. Additionally, I developed the logic to **dynamically display the streaming provider's logo** in the top-right corner of the poster, enabling users to quickly identify **where the media is available** for viewing. This feature not only added a layer of **functionality** but also aligned with the app's goal of **streamlining subscription management**.</p>
+            <video controls>
+              <source src="/videos/streamcaddy/showpage.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </article>
+
+        <article class="feature-card" id="profile-page">
+          <h3>Profile Page</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/profile_page.jpeg", alt: "Profile Page", class: "feature-image" %>
+            <p>This page acts as the user's **personal dashboard**, consolidating essential information related to their **streaming preferences** and **subscription management**. It showcases the user’s **profile picture**, **username**, and **logos of the streaming platforms** they currently use, providing a clear overview of their media services. The page offers easy access to the user's **watchlist** and **streaming platforms** for **adjustments.**<br>***My contribution:*** My contribution to this page was primarily focused on ensuring the accurate display of the **logos for each selected streaming provider**.</p>
+          </div>
+        </article>
+
+        <article class="feature-card" id="user-watchlist">
+          <h3>User Watchlist</h3>
+          <div class="feature-content">
+            <%= image_tag "streamcaddy/user_watchlist.jpeg", alt: "User Watchlist", class: "feature-image" %>
+            <p>The w**atchlist** is designed to highlight the user’s curated list of **movies and TV shows** that are generated either through the **Tinder-style game** or by **browsing**. It **organizes** content based on the **user's preferences**, ensuring that all saved media is easily accessible in one place. The page serves the purpose of allowing users to manage the movies and TV shows they have saved to watch later. The watchlist’s logic was built by a teammate who also designed the layout with intuitive buttons for **deleting media** and **adding reviews**. This **straightforward interface** makes it easy for users to track and interact with their watchlist items.</p>
+          </div>
+        </article>
+
+        <article class="feature-card" id="edit-providers">
+          <h3>Editing Streaming Providers</h3>
+          <div class="feature-content">
+            <p>This video showcases how users can **edit their streaming providers** via an intuitive interface they can access through their profile. By clicking on the **provider logos**, users can **select** or **deselect** the platforms. Once they click **submit**, the logos displayed on both the **profile page** and the **browse main page** are **automatically updated** to reflect the changes. The list of available **user providers** was sourced from the **TMDb API**, but rather than fetching all available providers, we limited the number of options to offer a curated selection. This ensured a more streamlined user experience, allowing for efficient management of their **streaming preferences**.<br>***My contributions:***<br>While my **teammate** was responsible for the **frontend development**, I focused on the **backend**, specifically implementing the **CRUD operations** for managing the user's selected streaming providers.</p>
+            <video controls>
+              <source src="/videos/streamcaddy/editing_providers.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </article>
+
+        <article class="feature-card" id="schedule-generation">
+          <h3>Generating Personalized Schedule</h3>
+          <div class="feature-content">
+            <video controls>
+              <source src="/videos/streamcaddy/schedule_generation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p>This video demonstrates how users can generate a **personalized schedule** based on the media in their **watchlist**. The key function of this feature is to help users determine which **streaming platforms** they should **keep**, **cancel**, or **add** in order to watch the content in their watchlist, ensuring both cost-effectiveness and efficient viewing. The app generates a **monthly schedule** tailored to the user’s preferences, taking into account their saved movies and TV shows. This schedule provides a **clear overview** of the platforms to subscribe to and when, optimizing the user's streaming experience.<br>***My contributions:***<br>My contribution to this feature was both in **frontend** and **backend** development. On the **frontend**, I designed the overall layout for the **general schedule** as well as the display for each month's schedule, ensuring an intuitive and visually appealing presentation. On the **backend**, I focused on building the logic that automatically sorts the **streaming provider logos** into categories: **Keep**, **Cancel**, or **Add** for each month, based on the user's preferences and the content they wish to watch. This functionality ensures the **schedule** is **dynamic** and **aligns** with the **user's needs**, helping them manage their subscriptions effectively.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="wrap-up" class="project-section">
+      <h2>Wrap-Up</h2>
+      <div class="content-block">
+        <p>StreamCaddy marked our **second collaborative project** as a team, completed within a **two-week timeframe**. Over this period, we saw significant **progress** in both our technical abilities and teamwork, particularly when compared to our first project, **RentaPet**. The project was structured into two focused phases: the first week dedicated to **backend development**, where we honed our skills in **API integration** and data modeling, and the second week focused on **frontend development**, where we applied our growing expertise in creating **intuitive, user-friendly interfaces**. Through consistent **communication** using tools like **Slack**, **Zoom**, and **Trello**, we maintained a well-organized workflow, which was essential for efficiently overcoming the challenges that arose. The experience reinforced the importance of collaboration, problem-solving, and adaptability. StreamCaddy stands as a reflection of our continuous improvement as a team. We are proud of the results achieved, particularly in **user experience design** and **technical integration**, and we look forward to applying the lessons learned in future projects.</p>
+      </div>
+    </section>
+
+    <section id="contributions" class="project-section">
+      <h2>My Contributions</h2>
+      <div class="content-block">
+        <p>- **Developed the Media Show Page**: Took ownership of both the **backend** and **frontend** for this page, including the logic to fetch and display data (e.g., episodes, seasons, cast, and synopsis) from the **TMDB API**<br>- **Designed Frontend Layout**: Crafted an **intuitive and visually appealing** user interface with easy-to-navigate tabs, a backdrop gallery, and dynamic elements like genre displays and streaming provider logos<br>- **Implemented CRUD Operations**: Developed the backend logic to handle data flow and ensure smooth integration between the database and the media show page<br>- **Contributed to Profile Page**: Focused on the accurate display of streaming provider logos and contributed to the smooth user experience on the profile page<br>- **Backend Development for Editing Providers**: Built **CRUD operations** for managing users' streaming provider preferences, ensuring the efficient handling of user data<br>- **Developed Personalized Schedule Feature**: Implemented both the **frontend and backend** for generating a dynamic, monthly schedule to optimize users’ streaming subscriptions based on their watchlist<br>- **Collaborative Teamwork**: Worked closely with teammates to develop core features, troubleshoot challenges, and deliver a functional, cohesive product</p>
+      </div>
+    </section>
+  </div>
+</div>
