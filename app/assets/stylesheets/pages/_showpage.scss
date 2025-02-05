@@ -1,5 +1,11 @@
 $light-white: #FFFFFF;
 $dark-white: #FAFAFA;
+$text-size: 20px;
+$text-color: #112044;
+
+html {
+  scroll-behavior: smooth;
+}
 
 .container-fluid {
   display: flex;
@@ -10,20 +16,23 @@ $dark-white: #FAFAFA;
 #sticky-nav {
   background: linear-gradient(to top, #101D3B, #112044);
   color: white;
-  padding-top: 110px;
-  padding-left: 200px;
   height: 100vh;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
 
-  .back-button {
-    color: #eddde0;
-    font-size: 24px;
-    margin-bottom: 40px;
-    display: block;
-
+  #back-button {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    color: $light-white;
+    font-size: 30px;
     &:hover {
-      color: white;
+      color: $dark-white;
     }
   }
 
@@ -31,16 +40,13 @@ $dark-white: #FAFAFA;
     ul {
       list-style: none;
       padding: 0;
-
       li {
         margin-bottom: 20px;
-
         a {
           text-decoration: none;
           color: white;
           font-size: 18px;
           transition: color 0.3s ease;
-
           &:hover {
             color: #eddde0;
           }
@@ -52,7 +58,7 @@ $dark-white: #FAFAFA;
 
 #project-content {
   background: $light-white;
-  color: black;
+  color: $text-color;
   padding: 0px;
   width: 100%;
 
@@ -78,6 +84,20 @@ $dark-white: #FAFAFA;
       margin-bottom: 30px;
       border-bottom: 2px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 10px;
+    }
+
+    p {
+      font-size: $text-size;
+    }
+
+    .content-block {
+      font-size: $text-size;
+      line-height: 1.6;
+
+      li {
+        font-size: $text-size;
+        line-height: 1.6;
+      }
     }
   }
 
@@ -114,7 +134,7 @@ $dark-white: #FAFAFA;
 
         a {
           text-decoration: none;
-          color: black;
+          color: $text-color;
           display: flex;
           align-items: center;
           gap: 8px;
@@ -159,9 +179,14 @@ $dark-white: #FAFAFA;
         gap: 30px;
 
         .feature-image {
-          width: 50%;
-          border-radius: 8px;
+          height: 780px;
+          width: 400px;
           object-fit: cover;
+        }
+
+        video {
+          height: 780px;
+          width: 400px;
         }
 
         .feature-description {
@@ -175,4 +200,8 @@ $dark-white: #FAFAFA;
       }
     }
   }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }
