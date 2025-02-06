@@ -1,0 +1,263 @@
+<div class="container-fluid">
+  <div class="col-10" id="project-content">
+    <section id="overview" class="project-section">
+      <div class="overview-container">
+        <div class="project-details">
+          <h1><%= @project.title %></h1>
+          <p class="project-info">Le Wagon, December 2024</p>
+          <p class="project-description">
+            RentaPet was the first full-stack project my team developed during the Le Wagon Bootcamp, completed within just one week!
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/jameshwood/rent_a_pet" target="_blank" class="github-link">
+              <i class="fa-brands fa-github"></i>
+              <span>View Code</span>
+            </a>
+          </div>
+        </div>
+        <%= image_tag @project.thumbnail, alt: "#{@project.title} Thumbnail", class: "project-thumbnail" %>
+      </div>
+      <p>RentaPet is a web platform designed to connect animal lovers by allowing users to rent pets from one another. The platform focuses on creating an engaging and seamless experience while maintaining a simple and intuitive user interface.</p>
+      <p>Key features include:</p>
+      <ul>
+        <li><strong>Detailed pet listings</strong> that provide all necessary information about an animal, including descriptions, photos, reviews and availability</li>
+        <li><strong>Location-based search</strong> with filtering options to help users easily find pets nearby that meet their preferences</li>
+        <li><strong>User reviews</strong> to build trust between pet owners and renters</li>
+        <li><strong>Comprehensive booking management</strong> that allows users to seamlessly book, track, and review their experiences</li>
+      </ul>
+    </section>
+
+    <section id="implementation" class="project-section">
+      <h2>Implementation</h2>
+      <div class="content-block">
+        <p>The successful development of RentaPet was made possible through strong team collaboration and the use of several tools:</p>
+        <ul>
+          <li>Zoom: The team worked closely together, staying on a Zoom call throughout the day to ensure instant communication and quick resolutions to any challenges</li>
+          <li>Slack: Used for additional communication and for sharing important updates or code snippets</li>
+          <li>Notion: Served as the central platform for planning and organizing the project. Tasks, deadlines, and project milestones were tracked here to keep everyone aligned</li>
+        </ul>
+        <p>This collaborative approach enabled us to work efficiently, tackle challenges together, and ensure the project stayed on track</p>
+      </div>
+    </section>
+
+    <section id="collaboration" class="project-section">
+      <h2>Team Collaboration</h2>
+      <div class="content-block">
+        <p>For the foundational structure of the application, my team and I worked together to establish the core components:<br>
+        The routes, controllers, models, and the database schema, ensuring everything was well-integrated from the start. This joint effort allowed us to build a solid backend framework that would support all the features of the platform, from pet listings to bookings. Each team member contributed their expertise to ensure a smooth and efficient structure for the application to function seamlessly.</p>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="project-section">
+      <h2>Troubleshooting</h2>
+      <div class="content-block">
+        <p>Many people dream of owning a dog but may lack the time or space to care for one full-time. Others might wish to spend time with a horse but find the costs of ownership prohibitive. RentaPet provides a creative and practical solution to these challenges by connecting people with their favorite animals and allowing them to rent pets on their own terms, whether for a few hours or a weekend.</p>
+      </div>
+    </section>
+
+    <section id="deep-dive" class="project-section">
+      <h2>Project Deep Dive</h2>
+
+      <div class="feature-cards">
+        <article class="feature-card" id="homepage">
+          <h3>Homepage</h3>
+          <div class="feature-content">
+            <%= image_tag "rentapet/homepage.jpeg", alt: "Homepage", id: "feature-image-rp" %>
+            <div class="feature-description">
+              <p>This page is the first touchpoint for users.<br>
+              They can immediately browse through available pets or use the search bar to refine their options.<br>
+              From here, they can explore more details by clicking on a pet listing or log in/sign up to make a booking.</p>
+            </div>
+          </div>
+          <div class="feature-content">
+            <div class="feature-description">
+              <p>Key features:</p>
+              <ul>
+                <li>Banner with a logo, search bar and log in/sign up options</li>
+                <li>Animal listings displaying main information</li>
+              </ul>
+              <p>My contribution:</p>
+              <ul>
+                <li>Created <strong>animal cards</strong> for an engaging pet display</li>
+                <li>Crafted the <strong>logo</strong> to reflect the platform's identity</li>
+                <li>Developed a seamless <strong>banner</strong> with a continuous visual flow into the footer</li>
+                <li>Designed and implemented the <strong>footer</strong> for a polished user experience</li>
+              </ul>
+            </div>
+            <video controls>
+              <source src="/videos/homepage.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </article>
+
+        <article class="feature-card" id="search-results-page">
+          <h3>Search Results Page</h3>
+          <div class="feature-content">
+            <%= image_tag "rentapet/search_results_page.jpeg", alt: "Search Results Page", id: "feature-image-rp" %>
+            <div class="feature-description">
+              <p>Key features:</p>
+              <ul>
+                <li>A grid with pets matching the user’s search query</li>
+                <li>A sticky map that pinpoints the animals’ locations</li>
+                <li>Clicking on a pin on the map, a card is displayed showing the details of the animal associated with that location</li>
+              </ul>
+              <p>My contribution:</p>
+              <ul>
+                <li>Adjusted the banner to be larger on the homepage and smaller on other pages</li>
+                <li>Created a dropdown list in the search bar for selecting different kinds of animals</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="animal-show-page">
+          <h3>Animal Show Page</h3>
+          <div class="feature-content">
+            <div class="feature-description">
+              <p>This video demonstrates the entire page, showcasing how users can view detailed pet information, select dates, and complete bookings.</p>
+              <p>Key features:</p>
+              <ul>
+                <li>Reviews and information about each animals are dynamically fetched from the database and displayed on the page</li>
+                <li>Simple form for the booking process</li>
+                <li>Automatically calculated pricing</li>
+                <li>A map showing the pet’s location</li>
+              </ul>
+            </div>
+            <video controls>
+              <source src="/videos/animal_show_page.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="feature-content">
+            <%= image_tag "rentapet/animal_show_page.jpeg", alt: "Animal Show Page", id: "feature-image-rp" %>
+            <div class="feature-description">
+              <p>My contribution:</p>
+              <ul>
+                <li>Crafted the <strong>backend logic</strong> and designed the <strong>frontend</strong> of the reviews section</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="booking-process">
+          <h3>Booking Process</h3>
+          <div class="feature-content">
+            <div class="feature-description">
+              <p>The booking process allows users to select a start and end date for their pet rental, with unavailable dates automatically blocked if the pet is already booked. Once the booking is confirmed, the user is redirected to their Bookings page to view all their active bookings.</p>
+              <p>My contributions:</p>
+              <ul>
+                <li>Created the <strong>simple form</strong></li>
+                <li>Implemented the <strong>datepicker</strong> together with a teammate</li>
+                <li>Coded the <strong>backend</strong> logic for handling <strong>new bookings</strong> and the creation of booking entries</li>
+              </ul>
+            </div>
+            <video controls>
+              <source src="/videos/booking_process.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </article>
+
+        <article class="feature-card" id="bookings-page">
+          <h3>Bookings Page</h3>
+          <div class="feature-content">
+            <%= image_tag "rentapet/bookings_page.jpeg", alt: "Bookings Page", id: "feature-image-rp" %>
+            <%= image_tag "rentapet/listings_bookings.jpeg", alt: "Listings Bookings", id: "feature-image-rp" %>
+          </div>
+          <div class="feature-content">
+            <div class="feature-description">
+              <p>Once opening the bookings page, the user can view all bookings at one or click on one single booking to see more details and leave a review.</p>
+              <p>Key features:</p>
+              <ul>
+                <li>Displays all pets booked by user and from user</li>
+                <li>Most important information is immediately visible (booking number, pet's name, price, dates)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="feature-content">
+            <%= image_tag "rentapet/booking_details.jpeg", alt: "Booking Details Page", id: "feature-image-rp" %>
+            <div class="feature-description">
+              <p>My contributions:</p>
+              <ul>
+                <li>Built the <strong>backend logic</strong> to clearly differentiate bookings between the user’s bookings and those of their own pets</li>
+                <li>Coded the <strong>logic</strong> that users can only add reviews to pets that are not their own</li>
+                <li>Created the <strong>CRUD operation</strong> to cancel a booking</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card" id="review-page">
+          <h3>Review Page</h3>
+          <div class="feature-content">
+            <div class="feature-description">
+              <p>Key features:</p>
+              <ul>
+                <li>Users can leave a review for pets they have booked, including a written description and a rating from 1 to 10</li>
+                <li>The average of all ratings contributes to the pet's overall rating</li>
+              </ul>
+              <p>My contribution:</p>
+              <ul>
+                <li>Styled and implemented the <strong>simple form</strong> used throughout the application to ensure consistent and user-friendly form layouts</li>
+              </ul>
+            </div>
+            <%= image_tag "rentapet/review_page.jpeg", alt: "Profile Page", class: "feature-image" %>
+          </div>
+        </article>
+
+        <article class="feature-card" id="listings-page">
+          <h3>Listings Page</h3>
+          <div class="feature-content">
+            <%= image_tag "rentapet/listings_page.jpeg", alt: "Listings Page", id: "feature-image-rp" %>
+            <div class="feature-description">
+              <p>Key features:</p>
+              <ul>
+                <li>Displays the user’s active pet listings with essential details</li>
+                <li>Provides options to edit or delete listings</li>
+              </ul>
+              <p>My contributions:</p>
+              <ul>
+                <li>Implemented the <strong>CRUD functionality</strong> for the listings, including <strong>creating</strong>, <strong>updating</strong> and <strong>deleting</strong> pet listings</li>
+              </ul>
+            </div>
+          </div>
+          <div class="feature-content">
+            <%= image_tag "rentapet/edit_listing1.jpeg", alt: "Edit Listing Page", id:"feature-image-rp"%>
+            <%= image_tag "rentapet/create_listing1.jpeg", alt: "Create Listing Page", id:"feature-image-rp"%>
+          </div>
+          <div class="feature-content">
+            <%= image_tag "rentapet/edit_listing2.jpeg", alt: "Edit Listing Page", id:"feature-image-rp"%>
+            <%= image_tag "rentapet/create_listing2.jpeg", alt: "Create Listing Page", id:"feature-image-rp"%>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="wrap-up" class="project-section">
+      <h2>Wrap-Up</h2>
+      <div class="content-block">
+        <p>RentaPet was a rewarding project and exciting learning experience for our entire team, combining creativity and collaboration to bring our idea to life.<br>
+        We utilized tools and technologies like HTML, CSS, JavaScript, SCSS, Tailwind, Bootstrap, and PostgreSQL to build a functional and user-friendly platform.<br>
+        As this was our first project as a team, we honed our skills in pair programming, task delegation and collaborative workflows, which were curcial for staying organized and meeting our goals.<br>
+        Deploying on Heroku presented its own set of challenges of deployment-specific issues we had to debug while staying focused under tight deadlines. This project was a valuable experience that strengthened both our technical expertise and teamwork.</p>
+      </div>
+    </section>
+
+    <section id="contributions" class="project-section">
+      <h2>My Contributions</h2>
+      <div class="content-block">
+        <ul>
+          <li>Designed and Developed Key UI Components: Created animal cards for engaging pet displays, crafted the logo, and designed a seamless banner that integrates smoothly into the footer</li>
+          <li>Responsive Layout Adjustments: Adjusted the banner size to be larger on the homepage and smaller on other pages for a balanced visual hierarchy</li>
+          <li>Implemented Search & Filtering: Developed a dropdown list in the search bar to allow users to filter pets by category</li>
+          <li>Developed Reviews Section: Designed and implemented both the backend and frontend for the reviews feature, ensuring users can leave feedback</li>
+          <li>Built Booking System Logic: Developed the backend logic for handling new bookings, differentiating between a user’s own bookings and those for their pets. Implemented restrictions so users can only review pets they don’t own</li>
+          <li>CRUD Functionality for Listings: Implemented create, update, and delete operations for pet listings, ensuring full control over available pets</li>
+          <li>Cancellation System: Coded the backend logic to allow users to cancel bookings seamlessly</li>
+          <li>Form Design & Styling: Created a simple form and datepicker with a teammate and styled form elements throughout the application for a consistent user-friendly experience</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

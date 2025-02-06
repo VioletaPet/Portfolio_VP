@@ -178,6 +178,12 @@ html {
         display: flex;
         gap: 30px;
 
+        #feature-image-rp {
+          height: 400px;
+          width: 780px;
+          object-fit: cover;
+        }
+
         .feature-image {
           height: 780px;
           width: 400px;
