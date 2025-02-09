@@ -1,14 +1,14 @@
 $light-white: #FFFFFF;
 $dark-white: #FAFAFA;
-$text-size: 20px;
+$text-font-size: 20px;
+$list-font-size: 18px;
 $text-color: #112044;
 
 html {
   scroll-behavior: smooth;
 }
 
-.container-fluid {
-  display: flex;
+.container-fluid-rp {
   margin: 0;
   padding: 0;
 }
@@ -56,26 +56,26 @@ html {
   }
 }
 
-#project-content {
+#project-content-rp {
   background: $light-white;
   color: $text-color;
   padding: 0px;
   width: 100%;
 
-  #overview {
+  #overview-rp {
     padding-top: 90px;
   }
 
-  #overview, #collaboration, #deep-dive, #contributions {
+  #overview-rp, #collaboration-rp, #deep-dive-rp, #contributions-rp {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     margin-bottom: 5px;
   }
 
-  #implementation, #troubleshooting, #wrap-up {
+  #implementation-rp, #troubleshooting-rp, #wrap-up-rp {
     background-color: $dark-white;
   }
 
-  .project-section {
+  .project-section-rp {
     padding: 80px;
 
     h2 {
@@ -86,27 +86,30 @@ html {
     }
 
     p {
-      font-size: $text-size;
+      font-size: $text-font-size;
     }
 
-    .content-block {
-      font-size: $text-size;
+    li {
+      font-size: $list-font-size;
       line-height: 1.6;
+    }
 
-      li {
-        font-size: $text-size;
-        line-height: 1.6;
-      }
+    .content-block-rp {
+      font-size: $text-font-size;
+      line-height: 1.6;
+      padding-right: 150px;
+      margin-right: 50px;
+
     }
   }
 
-  .overview-container {
+  .overview-container-rp {
     display: flex;
     align-items: flex-start;
     gap: 60px;
     margin-bottom: 10px;
 
-    .project-details {
+    .project-details-rp {
       flex: 1;
 
       h1 {
@@ -116,18 +119,18 @@ html {
         padding-bottom: 10px;
       }
 
-      .project-info {
+      .project-info-rp {
         font-size: 24px;
         margin-bottom: 30px;
       }
 
-      .project-description {
+      .project-description-rp {
         font-size: 18px;
         line-height: 1.6;
         margin-bottom: 30px;
       }
 
-      .project-links {
+      .project-links-rp {
         display: flex;
         gap: 20px;
 
@@ -140,7 +143,7 @@ html {
           font-size: 18px;
 
           &:hover {
-            color: #F16802;
+            color: #8DBCB1;
           }
 
           i {
@@ -150,7 +153,7 @@ html {
       }
     }
 
-    .project-thumbnail {
+    .project-thumbnail-rp {
       width: 300px;
       height: 300px;
       border-radius: 50%;
@@ -158,43 +161,64 @@ html {
     }
   }
 
-  .feature-cards {
+  .feature-cards-rp {
     display: flex;
     flex-direction: column;
     gap: 40px;
 
-    .feature-card {
+    .feature-card-rp {
       background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
+      padding-left: 30px;
+      padding-bottom: 40px; // Add padding to create space before the border
+      position: relative; // Required for the pseudo-element positioning
+
+      // Add the subtle line using a pseudo-element
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          rgba(128, 128, 128, 0.1),
+          rgba(128, 128, 128, 0.3) 50%,
+          rgba(128, 128, 128, 0.1)
+        );
+      }
 
       h3 {
         font-size: 24px;
         margin-bottom: 20px;
       }
 
-      .feature-content {
+      .feature-content-rp {
         display: flex;
+        flex-direction: column;
         gap: 30px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
 
         #feature-image-rp {
           height: 490px;
           width: 780px;
           object-fit: cover;
-        }
-
-        .feature-image {
-          height: 780px;
-          width: 400px;
-          object-fit: cover;
+          box-shadow: 3px 3px 10px 5px grey;
         }
 
         video {
-          height: 780px;
-          width: 400px;
+          height: 530px;
+          width: 830px;
         }
 
-        .feature-description {
-          flex: 1;
+        .feature-description-rp {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          margin-top: 20px;
+
 
           p {
             font-size: 18px;
