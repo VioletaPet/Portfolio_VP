@@ -66,3 +66,8 @@ end
 gem "bootstrap", "~> 5.2"
 gem "sassc-rails"
 gem "font-awesome-sass", "~> 6.7"
+
+gem 'dotenv-rails'
+
+# chatbot gems
+gem "ruby-openai"
