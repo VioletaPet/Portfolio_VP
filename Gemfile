@@ -71,3 +71,4 @@ gem 'dotenv-rails'
 
 # chatbot gems
 gem "ruby-openai"
+gem "openai", "~> 0.3.0"

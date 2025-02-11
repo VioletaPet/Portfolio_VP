@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:show]
   resources :skills, only: [:show]
+
+  post "/chatbot/perform", to: "chatbot#perform"
 end

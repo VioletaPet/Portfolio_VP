@@ -15,17 +15,10 @@
         <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#chatbot">C(h)atBot</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-    <p>
-      b <br>
-      b <br>
-      b <br>
-      b <br>
-      b <br>
-      b <br>
-    </p>
     <div class="links">
       <i class="fa-brands fa-github"></i>
       <span><i class="fa-brands fa-linkedin"></i></span>
@@ -125,6 +118,22 @@
       </div>
     </section>
 
+    <section id="chatbot">
+      <div data-controller="chat" class="console-container">
+        <div class="console-header">Ask Rambo</div>
+
+        <div class="chat-output border p-3 mb-3" data-chat-target="output" style="background-color: black; color: white; height: 400px; overflow-y: scroll; font-family: 'Montserrat', monospace;">
+          <%# messages will be in here %>
+        </div>
+
+        <form data-chat-target="form" data-action="submit->chat#submit">
+          <input type="text" data-chat-target="input" placeholder="Ask me anything about [Your Name]..." class="form-control mb-2 console-input" style="background-color: black; color: white; border: 1px solid white; font-family: 'Courier New', monospace;">
+          <button type="submit" class="btn btn-warning w-100">Send</button>
+        </form>
+      </div>
+    </section>
+
+
     <section id="contact">
       <h3><em>Get in touch!</em></h3>
       <div class="contact-container">
@@ -140,4 +149,3 @@
     </section>
   </div>
 </div>
-
