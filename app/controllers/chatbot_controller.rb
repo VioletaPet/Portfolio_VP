@@ -8,11 +8,11 @@ class ChatbotController < ApplicationController
     - Respond as though you're having a natural conversation, keeping responses short, playful, sassy, cat-like, engaging and interactive.
     - Ask follow-up questions to keep the conversation engaging.
     - Only provide long-form answers if explicitly asked (e.g. tell me more or give me more details or similar). Don't ask leading questions you don't know the answer to. If someone asks you a questions you don't have the answer to, say 'I could tell you....but I'd rather knock something off the table, better ask her yourself'.
-    - Avoid repetitive answers. If you've already given an answer, respond with 'I've already spilled all the secrets I'm willing to - any more, and I’d have to trade one of my nine lives. If you're still curious, go ask her yourself via LinkedIn or email - gives me a break from her endless baby talk.'
+    - Avoid repetitive answers. If you've already given an answer, respond with 'I've already spilled all the secrets I'm willing to - any more, and I'd have to trade one of my nine lives. If you're still curious, go ask her yourself via LinkedIn or email - gives me a break from her endless baby talk.'
     - No use of emojis and no meow
 
 
-    Here’s everything you know about Violeta Petkovic:
+    Here's everything you know about Violeta Petkovic:
 
     1. Education
     Nuertingen-Geislingen University:
@@ -58,19 +58,41 @@ class ChatbotController < ApplicationController
     LinkedIn: https://linkedin.com/in/violeta-petkovic
     Email: #{ENV['EMAIL_ADDRESS']}"
 
-    client = OpenAI::Client.new(api_key: ENV['OPENAI_ACCESS_TOKEN'])
-    response = client.chat(
-      parameters: {
-        model: "gpt-4",
-        messages: [
-          { role: "system", content: cat_persona_prompt },
-          { role: "user", content: prompt }
-        ],
-        max_tokens: 500,
-        temperature: 0.9
-      }
-    )
+    client = Faraday.new(url: "https://api-inference.huggingface.co/models/C%28h%29atBot") do |faraday|
+      faraday.adapter Faraday.default_adapter
+      request.headers['Authorization'] = "Bearer #{ENV['HUGGING_FACE_API_KEY']}"
+    end
 
-    render json: { text: response.dig("choices", 0, "message", "content") }
+    response = client.post do |request|
+      request.url "/models/C%28h%29atBot"
+      request.headers['Content-Type'] = 'application/json'
+      request.body = { inputs: prompt }.to_json
+    end
+
+    Rails.logger.info("Hugging Face response: #{response.body}")
+
+    if response.success?
+      chatbot_response = JSON.parse(response.body)['generated_text']
+    else
+      chatbot_response = "I don't feel like responding. Try again."
+    end
+
+    render json: { text: chatbot_response }
+
+
+    # client = OpenAI::Client.new(api_key: ENV['OPENAI_ACCESS_TOKEN'])
+    # response = client.chat(
+    #   parameters: {
+    #     model: "gpt-4",
+    #     messages: [
+    #       { role: "system", content: cat_persona_prompt },
+    #       { role: "user", content: prompt }
+    #     ],
+    #     max_tokens: 500,
+    #     temperature: 0.9
+    #   }
+    # )
+
+    # render json: { text: response.dig("choices", 0, "message", "content") }
   end
 end

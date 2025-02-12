@@ -4,8 +4,9 @@ export default class extends Controller {
   static targets = ["output", "input", "form"]
 
   connect() {
+    console.log("Stimulus controller connected!");
     this.messages = [];
-    this.appendMessage("system", "Welcome to the Rambo Chat! I'm Rambo, your feline expert on all things Violeta Petkovic. Curious about her education, professional experience, hobbies or secret talents? Ask away! If I don't have the answer (or just can't be bothered), you should ask her directly - she's the one with the thumbs, after all.");
+    this.appendMessage("Rambo", "Welcome to the Rambo Chat! I'm Rambo, your feline expert on all things Violeta Petkovic. Curious about her education, professional experience, hobbies or secret talents? Ask away!");
   }
 
   async submit (event) {
@@ -24,17 +25,26 @@ export default class extends Controller {
     this.inputTarget.value = "";
 
     // send POST request to /chatbot/perform
-    let response = await fetch("/chatbot/perform", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json", // indicate that the body of the request will be in JSON format
-        "X-CSRF-Token": csrfToken
-      },
-      body: JSON.stringify({ prompt: input }) // user's input is converted into a JSON string and included in request body
-    });
+    try {
+      let response = await fetch("/chatbot/perform", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // indicate that the body of the request will be in JSON format
+          "X-CSRF-Token": csrfToken
+        },
+        body: JSON.stringify({ user_prompt: prompt }) // user's input is converted into a JSON string and included in request body
+      });
 
-    let data = await response.json(); //server's response is parsed into a JavaScript object
-    this.appendMessage("Rambo", data.text); // display's Rambo's AI generated message labeled with 'Rambo'
+      if (!response.ok) {
+        throw new Error(`HTTP error! status ${response.status}`);
+      }
+
+      let data = await response.json(); //server's response is parsed into a JavaScript object
+      this.appendMessage("Rambo", data.text); // display's Rambo's AI generated message labeled with 'Rambo'
+    } catch (error) {
+      console.error('Error:', error);
+      this.appendMessage("Rambo", "Sorry, I encountered an error. Please try again.")
+    }
   }
 
   // method to add a new message to the chat window

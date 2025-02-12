@@ -1,13 +1,14 @@
 <div class="container-fluid">
   <div class="col-4" id="sticky-side">
-    <img src="assets/photo.png" alt="Picture of Violeta" id="photo">
-    <h1>Violeta Petkovic</h1>
-    <h2>Junior Full Stack Developer</h2>
+    <div class="info-container">
+      <img src="assets/photo.png" alt="Picture of Violeta" id="photo">
+      <h1>Violeta Petkovic</h1>
+      <h3>Junior Full Stack Developer</h3>
+    </div>
     <div class="btn-container">
       <button type="button" class="btn btn-outline-light">Download CV</button>
       <button type="button" class="btn btn-light">Contact Info</button>
     </div>
-
 
     <div class="navbar">
       <ul>
@@ -119,20 +120,17 @@
     </section>
 
     <section id="chatbot">
-      <div data-controller="chat" class="console-container">
-        <div class="console-header">Ask Rambo</div>
-
-        <div class="chat-output border p-3 mb-3" data-chat-target="output" style="background-color: black; color: white; height: 400px; overflow-y: scroll; font-family: 'Montserrat', monospace;">
+      <div data-controller="chatbot" class="console-container">
+        <div class="chat-output border p-3 mb-3" data-chatbot-target="output" style="background-color: black; color: white; height: 400px; overflow-y: scroll; font-family: 'Montserrat', monospace;">
           <%# messages will be in here %>
         </div>
 
-        <form data-chat-target="form" data-action="submit->chat#submit">
-          <input type="text" data-chat-target="input" placeholder="Ask me anything about [Your Name]..." class="form-control mb-2 console-input" style="background-color: black; color: white; border: 1px solid white; font-family: 'Courier New', monospace;">
+        <form data-chatbot-target="form" data-action="submit->chatbot#submit">
+          <input type="text" data-chatbot-target="input" placeholder="Ask me anything about [Your Name]..." class="form-control mb-2 console-input" style="background-color: black; color: white; border: 1px solid white; font-family: 'Courier New', monospace;">
           <button type="submit" class="btn btn-warning w-100">Send</button>
         </form>
       </div>
     </section>
-
 
     <section id="contact">
       <h3><em>Get in touch!</em></h3>
