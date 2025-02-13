@@ -130,23 +130,26 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  p {
-    font-size: 22px;
-  }
-
   section {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 60px 0;
+    margin-bottom: 10px;
 
     &:first-child {
-      padding-top: 0;
+      padding-top: 0px;
     }
 
     &:last-child {
-      padding-bottom: 0;
+      padding-bottom: 0px;
+    }
+  }
+
+  #about {
+    p {
+      font-size: 24px;
     }
   }
 
@@ -159,14 +162,8 @@ body {
     align-items: center;
   }
 
-  #projects {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
   #certifications {
     width: 100%;
-    margin-top: 30px;
     padding-left: 150px;
 
     .certificates {
@@ -175,7 +172,6 @@ body {
   }
 
   #contact {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
