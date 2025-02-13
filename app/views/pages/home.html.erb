@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="col-4" id="sticky-side">
+  <div class="col-4" id="sticky-side" data-controller="navbar">
     <div class="info-container">
       <img src="assets/photo.png" alt="Picture of Violeta" id="photo">
       <h1>Violeta Petkovic</h1>
@@ -7,17 +7,42 @@
     </div>
     <div class="btn-container">
       <button type="button" class="btn btn-outline-light">Download CV</button>
-      <button type="button" class="btn btn-light">Contact Info</button>
+      <a href="#contact"><button type="button" class="btn btn-light">Contact Info</button></a>
     </div>
 
     <div class="navbar">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#chatbot">C(h)atBot</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li data-navbar-item-target="navbarItem">
+          <a href="#about">
+            <div class="nav-line"></div>
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <li data-navbar-item-target="navbarItem">
+          <a href="#stack">
+            <div class="nav-line"></div>
+            <span>STACK</span>
+          </a>
+        </li>
+        <li data-navbar-item-target="navbarItem">
+          <a href="#projects">
+            <div class="nav-line"></div>
+            <span>PROJECTS</span>
+          </a>
+        </li>
+        <li data-navbar-item-target="navbarItem">
+          <a href="#certifications">
+            <div class="nav-line"></div>
+            <span>CERTIFICATIONS</span>
+          </a>
+        </li>
+        <%# <li data-navbar-item-target="navbarItem"><a href="#chatbot">C(h)atBot</a></li> %>
+        <li data-navbar-item-target="navbarItem">
+          <a href="#contact">
+            <div class="nav-line"></div>
+            <span>CONTACT</span>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="links">
@@ -27,7 +52,7 @@
   </div>
 
   <div class="col-8" id="main-content">
-    <section id="about" class="pt-2">
+    <section id="about">
       <div>
         <h3 class=mb-0">Hello, nice to meet you!</h3>
         <div class="mb-4">
@@ -119,25 +144,25 @@
       </div>
     </section>
 
-    <section id="chatbot">
-      <div data-controller="chatbot" class="console-container">
-        <div class="chat-output border p-3 mb-3" data-chatbot-target="output" style="background-color: black; color: white; height: 400px; overflow-y: scroll; font-family: 'Montserrat', monospace;">
+    <%# <section id="chatbot"> %>
+      <%# <div data-controller="chatbot" class="console-container"> %>
+        <%# <div class="chat-output border p-3 mb-3" data-chatbot-target="output" style="background-color: black; color: white; height: 400px; overflow-y: scroll; font-family: 'Montserrat', monospace;"> %>
           <%# messages will be in here %>
-        </div>
+        <%# </div> %>
 
-        <form data-chatbot-target="form" data-action="submit->chatbot#submit">
-          <input type="text" data-chatbot-target="input" placeholder="Ask me anything about [Your Name]..." class="form-control mb-2 console-input" style="background-color: black; color: white; border: 1px solid white; font-family: 'Courier New', monospace;">
-          <button type="submit" class="btn btn-warning w-100">Send</button>
-        </form>
-      </div>
-    </section>
+        <%# <form data-chatbot-target="form" data-action="submit->chatbot#submit"> %>
+          <%# <input type="text" data-chatbot-target="input" placeholder="Ask me anything about [Your Name]..." class="form-control mb-2 console-input" style="background-color: black; color: white; border: 1px solid white; font-family: 'Courier New', monospace;"> %>
+          <%# <button type="submit" class="btn btn-warning w-100">Send</button> %>
+        <%# </form> %>
+      <%# </div> %>
+    <%# </section> %>
 
     <section id="contact">
       <h3><em>Get in touch!</em></h3>
       <div class="contact-container">
         <div class="contact-info">
           <i class="fa-solid fa-envelope"></i>
-          <p><a href="mailto:v.petkovic@protonmail.com">v.petkovic@protonmail.com</a></p>
+          <a href="mailto:v.petkovic@protonmail.com">v.petkovic@protonmail.com</a>
         </div>
         <div class="contact-info">
           <i class="fa-brands fa-linkedin"></i>

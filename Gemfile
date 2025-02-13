@@ -67,7 +67,8 @@ gem "bootstrap", "~> 5.2"
 gem "sassc-rails"
 gem "font-awesome-sass", "~> 6.7"
 
-gem "dotenv-rails"
+gem 'dotenv-rails'
 
 # chatbot gems
-gem "faraday"
+gem "ruby-openai"
+gem "openai", "~> 0.3.0"

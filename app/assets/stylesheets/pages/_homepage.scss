@@ -1,3 +1,6 @@
+$navbar-items-color: #a6abbc;
+$navbar-hover-color: #ccd6f6;
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,12 +28,11 @@ body {
   top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 
   .info-container {
     padding-left: 200px;
     padding-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 2px;
   }
 
   #photo {
@@ -43,6 +45,10 @@ body {
 
   .btn-container {
     padding-left: 200px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 12px;
   }
 
   .navbar {
@@ -50,10 +56,52 @@ body {
 
     ul {
       list-style: none;
+      padding: 0;
+      margin: 0;
 
-      a {
-        text-decoration: none;
-        color: white;
+      li {
+        margin: 12px 0;
+        cursor: pointer;
+
+        &.active {
+          a {
+            color: $navbar-hover-color;
+
+            .nav-line {
+              width: 60px;
+              background-color: $navbar-hover-color;
+            }
+          }
+        }
+
+        &:hover {
+          a {
+            color: $navbar-hover-color;
+
+            .nav-line {
+              width: 60px;
+              background-color: $navbar-hover-color;
+            }
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $navbar-items-color;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          font-size: 14px;
+          transition: color 0.2s ease;
+          font-weight: 500;
+
+          .nav-line {
+            width: 35px;
+            height: 1.2px;
+            background-color: $navbar-items-color;
+            transition: width 0.3s ease, background-color 0.3s ease;
+          }
+        }
       }
     }
   }
@@ -64,6 +112,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
 
     i {
       font-size: 30px;
@@ -78,6 +129,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  p {
+    font-size: 22px;
+  }
 
   section {
     width: 100%;
@@ -113,6 +168,10 @@ body {
     width: 100%;
     margin-top: 30px;
     padding-left: 150px;
+
+    .certificates {
+      padding: 20px 0 20px 0;
+    }
   }
 
   #contact {
@@ -145,6 +204,14 @@ body {
         align-items: center;
         gap: 10px;
         font-size: 18px;
+
+        a {
+          margin-bottom: 0;
+        }
+
+        i {
+          font-size: 25px;
+        }
       }
     }
   }
