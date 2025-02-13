@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["navbarItem"]
+  static targets = ["item"]
 
   connect() {
     this.observeScroll()
@@ -18,8 +18,8 @@ export default class extends Controller {
         })
       },
       {
-        threshold: 0.5,
-        rootMargin: "-50% 0px -50% 0px"
+        threshold: 0.2,
+        rootMargin: "-20% 0px"
       }
     )
 
@@ -29,7 +29,7 @@ export default class extends Controller {
   }
 
   setActiveSection(sectionID) {
-    this.navbarItemTargets.forEach(item => {
+    this.itemTargets.forEach(item => {
       const link = item.querySelector('a').getAttribute('href')
       const linkSection = link.replace('#', '')
       item.classList.toggle('active', linkSection === sectionID)

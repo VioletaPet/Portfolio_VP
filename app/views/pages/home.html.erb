@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="col-4" id="sticky-side" data-controller="navbar">
+  <div class="col-4" id="sticky-side">
     <div class="info-container">
       <img src="assets/photo.png" alt="Picture of Violeta" id="photo">
       <h1>Violeta Petkovic</h1>
@@ -10,34 +10,34 @@
       <a href="#contact"><button type="button" class="btn btn-light">Contact Info</button></a>
     </div>
 
-    <div class="navbar">
+    <div class="navbar" data-controller="navbar">
       <ul>
-        <li data-navbar-item-target="navbarItem">
+        <li data-navbar-target="item">
           <a href="#about">
             <div class="nav-line"></div>
             <span>ABOUT</span>
           </a>
         </li>
-        <li data-navbar-item-target="navbarItem">
+        <li data-navbar-target="item">
           <a href="#stack">
             <div class="nav-line"></div>
             <span>STACK</span>
           </a>
         </li>
-        <li data-navbar-item-target="navbarItem">
+        <li data-navbar-target="item">
           <a href="#projects">
             <div class="nav-line"></div>
             <span>PROJECTS</span>
           </a>
         </li>
-        <li data-navbar-item-target="navbarItem">
+        <li data-navbar-target="item">
           <a href="#certifications">
             <div class="nav-line"></div>
             <span>CERTIFICATIONS</span>
           </a>
         </li>
-        <%# <li data-navbar-item-target="navbarItem"><a href="#chatbot">C(h)atBot</a></li> %>
-        <li data-navbar-item-target="navbarItem">
+        <%# <li data-navbar-target="item"><a href="#chatbot">C(h)atBot</a></li> %>
+        <li data-navbar-target="item">
           <a href="#contact">
             <div class="nav-line"></div>
             <span>CONTACT</span>
@@ -54,20 +54,20 @@
   <div class="col-8" id="main-content">
     <section id="about">
       <div>
-        <h3 class=mb-0">Hello, nice to meet you!</h3>
-        <div class="mb-4">
+        <h3>Hello, nice to meet you!</h3>
+        <div>
           <p>I’m an aspiring Junior Full Stack Developer passionate about building the bridge between well performing backend code and intuitive frontend design to make seamless, user-focused applications come to life. Recently, I completed an intensive coding bootcamp, where I learned my skills in technologies like Ruby, JavaScript, and modern frameworks to build applications that are both visually engaging and highly functional.</p>
         </div>
-        <div class="mb-4">
+        <div>
           <p>Before transitioning into tech, I gained valuable experience in project management and office leadership roles. These positions equipped me with strong organizational, problem-solving, and interpersonal skills – qualities that complement my technical knowledge and support my career switch.
           I’m excited to continue growing in full-stack development, embracing new challenges, and contributing to innovative solutions in this dynamic field.
           </p>
         </div>
-        <div class="mb-4">
+        <div>
           <p class="mb-0"><em>My ultimate goal? </em></p>
           <p>To keep growing professionally, solve meaningful problems, and one day become a true coding-goddess.</p>
         </div>
-        <div class="mb-4">
+        <div>
           <p>Now that I’ve made my future plans sound inspiring, let me gracefully transition back into the pigeon. Because in my spare time, you’ll find me wobbling through new yoga poses (occasionally falling over), crocheting gifts for loved ones or on my next travel adventure to explore nature and find delicious local snacks along the way.</p>
         </div>
       </div>
