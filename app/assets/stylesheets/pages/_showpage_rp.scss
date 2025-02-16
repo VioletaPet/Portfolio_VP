@@ -3,6 +3,7 @@ $dark-white: #FAFAFA;
 $text-font-size: 20px;
 $list-font-size: 18px;
 $text-color: #112044;
+$heading-font: Georgia, 'Times New Roman', Times, serif;
 
 html {
   scroll-behavior: smooth;
@@ -11,48 +12,20 @@ html {
 .container-fluid-rp {
   margin: 0;
   padding: 0;
-}
 
-#sticky-nav {
-  background: linear-gradient(to top, #101D3B, #112044);
-  color: white;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 30px;
-
-  #back-button {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    color: $light-white;
-    font-size: 30px;
-    &:hover {
-      color: $dark-white;
-    }
+  h1 {
+    font-family: $heading-font;
+    font-size: 50px;
   }
 
-  .project-navbar {
-    ul {
-      list-style: none;
-      padding: 0;
-      li {
-        margin-bottom: 20px;
-        a {
-          text-decoration: none;
-          color: white;
-          font-size: 18px;
-          transition: color 0.3s ease;
-          &:hover {
-            color: #eddde0;
-          }
-        }
-      }
-    }
+  h2 {
+    font-family: $heading-font;
+    font-size: 40px;
+  }
+
+  h3 {
+    font-family: $heading-font;
+    font-size: 35px;
   }
 }
 
@@ -71,7 +44,7 @@ html {
     margin-bottom: 5px;
   }
 
-  #implementation-rp, #troubleshooting-rp, #wrap-up-rp {
+  #implementation-rp, #challenges-rp, #wrap-up-rp {
     background-color: $dark-white;
   }
 
@@ -79,9 +52,7 @@ html {
     padding: 80px;
 
     h2 {
-      font-size: 32px;
       margin-bottom: 30px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 10px;
     }
 
@@ -103,6 +74,12 @@ html {
     }
   }
 
+  #overview {
+    li {
+      font-size: $list-font-size;
+    }
+  }
+
   .overview-container-rp {
     display: flex;
     align-items: flex-start;
@@ -113,19 +90,18 @@ html {
       flex: 1;
 
       h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 10px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
       }
 
       .project-info-rp {
         font-size: 24px;
         margin-bottom: 30px;
+        font-style: italic;
       }
 
       .project-description-rp {
-        font-size: 18px;
+        font-size: $text-font-size;
         line-height: 1.6;
         margin-bottom: 30px;
       }
@@ -169,10 +145,9 @@ html {
     .feature-card-rp {
       background: rgba(255, 255, 255, 0.05);
       padding-left: 30px;
-      padding-bottom: 40px; // Add padding to create space before the border
-      position: relative; // Required for the pseudo-element positioning
+      padding-bottom: 40px;
+      position: relative;
 
-      // Add the subtle line using a pseudo-element
       &::after {
         content: '';
         position: absolute;
@@ -189,7 +164,6 @@ html {
       }
 
       h3 {
-        font-size: 24px;
         margin-bottom: 20px;
       }
 

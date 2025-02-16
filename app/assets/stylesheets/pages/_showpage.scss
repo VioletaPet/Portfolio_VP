@@ -2,6 +2,9 @@ $light-white: #FFFFFF;
 $dark-white: #FAFAFA;
 $text-size: 20px;
 $text-color: #112044;
+$heading-font: Georgia, 'Times New Roman', Times, serif;
+$navbar-items-color: #a6abbc;
+$navbar-hover-color: #ccd6f6;
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +14,21 @@ html {
   display: flex;
   margin: 0;
   padding: 0;
+
+  h1 {
+    font-family: $heading-font;
+    font-size: 50px;
+  }
+
+  h2 {
+    font-family: $heading-font;
+    font-size: 40px;
+  }
+
+  h3 {
+    font-family: $heading-font;
+    font-size: 35px;
+  }
 }
 
 #sticky-nav {
@@ -23,16 +41,19 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  padding: 0;
 
   #back-button {
     position: absolute;
-    top: 100px;
-    left: 20px;
-    color: $light-white;
+    top: 107px;
+    left: 52px;
+    color: $navbar-items-color;
     font-size: 30px;
+
     &:hover {
-      color: $dark-white;
+      color: $navbar-hover-color;
+      font-size: 40px;
+      transition: 0.2s ease;
     }
   }
 
@@ -40,16 +61,31 @@ html {
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+
       li {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        cursor: pointer;
+
+        &.active {
+          a {
+            color: $navbar-hover-color;
+          }
+        }
+
+        &:hover {
+          a {
+            color: $navbar-hover-color;
+            font-size: 20px;
+            transition: 0.2s ease;
+          }
+        }
+
         a {
           text-decoration: none;
-          color: white;
+          color: $navbar-items-color;
           font-size: 18px;
-          transition: color 0.3s ease;
-          &:hover {
-            color: #eddde0;
-          }
+          font-weight: 500;
         }
       }
     }
@@ -79,7 +115,6 @@ html {
     padding: 80px;
 
     h2 {
-      font-size: 32px;
       margin-bottom: 30px;
       border-bottom: 2px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 10px;
@@ -100,6 +135,12 @@ html {
     }
   }
 
+  .project-section {
+    li {
+      font-size: 18px;
+    }
+  }
+
   .overview-container {
     display: flex;
     align-items: flex-start;
@@ -110,10 +151,9 @@ html {
       flex: 1;
 
       h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 10px;
+        padding-bottom: 0px;
       }
 
       .project-info {
@@ -122,9 +162,9 @@ html {
       }
 
       .project-description {
-        font-size: 18px;
+        font-size: $text-size;
         line-height: 1.6;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
 
       .project-links {
@@ -166,15 +206,37 @@ html {
     .feature-card {
       background: rgba(255, 255, 255, 0.05);
       padding: 30px;
+      padding-bottom: 40px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          rgba(128, 128, 128, 0.1),
+          rgba(128, 128, 128, 0.3) 50%,
+          rgba(128, 128, 128, 0.1)
+        );
+      }
+
 
       h3 {
-        font-size: 24px;
         margin-bottom: 20px;
       }
 
       .feature-content {
         display: flex;
         gap: 30px;
+
+        #watchlist_image {
+          height: 868px;
+          width: 400px;
+        }
 
         #feature-image-rp {
           height: 490px;
@@ -195,11 +257,25 @@ html {
 
         .feature-description {
           flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
 
-          p {
-            font-size: 18px;
-            line-height: 1.6;
+          .border-box {
+            border: solid 1px lightgrey;
+            border-radius: 20px;
+            padding: 20px;
+
+            li {
+              font-size: $text-size;
+            }
+
+            p {
+              font-size: $text-size;
+              line-height: 1.6;
+            }
           }
+
         }
       }
     }

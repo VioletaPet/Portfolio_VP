@@ -2,22 +2,23 @@
   <div class="col-2" id="sticky-nav">
     <a href="<%= root_path %>"><i class="fa-solid fa-chevron-left" id="back-button"></i></a>
 
-    <nav class="project-navbar">
+    <nav class="project-navbar" data-controller="navbar" data-navbar-project-type="<%= @project.title == 'RentaPet' ? 'rentapet' : 'streamcaddy' %>">
       <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#implementation">Implementation</a></li>
-        <li><a href="#collaboration">Team Collaboration</a></li>
-        <li><a href="#challenges">Challenges</a></li>
-        <li><a href="#deep-dive">Project Deep Dive</a></li>
-        <li><a href="#wrap-up">Wrap up</a></li>
-        <li><a href="#contributions">Contributions</a></li>
+        <% suffix = @project.title == "RentaPet" ? "-rp" : "" %>
+        <li data-navbar-target="item"><a href="#overview<%= suffix %>">OVERVIEW</a></li>
+        <li data-navbar-target="item"><a href="#implementation<%= suffix %>">IMPLEMENTATION</a></li>
+        <li data-navbar-target="item"><a href="#collaboration<%= suffix %>">TEAM COLLABORATION</a></li>
+        <li data-navbar-target="item"><a href="#challenges<%= suffix %>">CHALLENGES</a></li>
+        <li data-navbar-target="item"><a href="#deep-dive<%= suffix %>">PROJECT DEEP DIVE</a></li>
+        <li data-navbar-target="item"><a href="#wrap-up<%= suffix %>">WRAP UP</a></li>
+        <li data-navbar-target="item"><a href="#contributions<%= suffix %>">CONTRIBUTIONS</a></li>
       </ul>
     </nav>
   </div>
 
-    <% if @project.title == "StreamCaddy" %>
-      <%= render "projects/streamcaddy" %>
-    <% elsif @project.title == "RentaPet" %>
-      <%= render "projects/rentapet" %>
-    <% end %>
+  <% if @project.title == "StreamCaddy" %>
+    <%= render "projects/streamcaddy" %>
+  <% elsif @project.title == "RentaPet" %>
+    <%= render "projects/rentapet" %>
+  <% end %>
 </div>
